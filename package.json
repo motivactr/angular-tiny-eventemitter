@@ -1,7 +1,8 @@
 {
   "name": "angular-tiny-eventemitter",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Tiny event emitter for Angular.JS.",
+  "homepage": "https://github.com/rubenv/angular-tiny-eventemitter",
   "main": "dist/angular-tiny-eventemitter.js",
   "directories": {
     "test": "test"

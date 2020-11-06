@@ -10,6 +10,8 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-ng-annotate');
 
     grunt.initConfig({
+        pkg: grunt.file.readJSON('package.json'),
+
         config: {
             name: 'angular-tiny-eventemitter',
             e2ePort: 9000
@@ -47,9 +49,11 @@ module.exports = function (grunt) {
 
         concat: {
             dist: {
-                files: {
-                    'dist/<%= config.name %>.js': ['src/*.js']
-                }
+                options: {
+                    banner: '<%= meta.banner %>\n',
+                },
+                src: ['src/*.js'],
+                dest: 'dist/<%= config.name %>.js'
             }
         },
 
@@ -99,6 +103,18 @@ module.exports = function (grunt) {
                 browsers: ['Firefox', 'PhantomJS'],
                 singleRun: true
             }
+        },
+
+        meta: {
+            banner: [
+                '/*',
+                ' * <%= pkg.name %>',
+                ' * <%= pkg.homepage %>',
+                ' * ',
+                ' * Version: <%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %>',
+                ' * License: <%= pkg.license %>',
+                ' */'
+              ].join('\n')
         }
     });
 

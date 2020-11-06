@@ -1,3 +1,10 @@
+/*
+ * angular-tiny-eventemitter
+ * https://github.com/rubenv/angular-tiny-eventemitter
+ * 
+ * Version: 1.2.1 - 2020-11-06
+ * License: MIT
+ */
 angular.module('rt.eventemitter', []).factory('eventEmitter', function () {
     var key = '$$tinyEventListeners';
 
